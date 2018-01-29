@@ -70,7 +70,7 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                //fetchValuesFromDatabase(dataSnapshot);
+                fetchValuesFromDatabase(dataSnapshot);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -193,6 +193,13 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     public void textToSpeechActivity(View v)
     {
         startActivity(new Intent(getApplicationContext(),textToSpeechActivity.class));
+        txtSpeechInput.setText(null);
+    }
+
+    public void logout(View v)
+    {
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        mAuth.signOut();
         finish();
     }
 

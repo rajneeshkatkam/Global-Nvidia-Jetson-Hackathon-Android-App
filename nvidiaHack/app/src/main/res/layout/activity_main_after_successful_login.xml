@@ -7,6 +7,14 @@
     android:background="@color/bg_gradient_start"
     tools:context="com.raj.nvidiahack.mainActivityAfterSuccessfulLogin">
 
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:onClick="logout"
+        android:text="Logout"/>
+
 
     <TextView
         android:id="@+id/txtSpeechInput"
