@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "528966389972",
+    "firebase_url": "https://nvidiahack-d0e6d.firebaseio.com",
+    "project_id": "nvidiahack-d0e6d",
+    "storage_bucket": "nvidiahack-d0e6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528966389972:android:b595818607d5dbda",
+        "android_client_info": {
+          "package_name": "com.raj.nvidiahack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528966389972-ah8k6ca1m498rsdohcsi8pnp5ubdf9jo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raj.nvidiahack",
+            "certificate_hash": "f7ee398cfe1da1d671b7ce314c5a9e92efbcabf9"
+          }
+        },
+        {
+          "client_id": "528966389972-3nv8uhogb521cpfic9ksdfi85ab95e93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH1UOZmvY9cnElleEMgF8p-V6uqAHmb-c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528966389972-3nv8uhogb521cpfic9ksdfi85ab95e93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

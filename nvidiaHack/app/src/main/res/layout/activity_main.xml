@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.raj.nvidiahack.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/login_page" />
+
+        <EditText
+            android:id="@+id/emailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/password"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="34dp"
+            android:hint="Email ID"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LoginButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="48dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/LoginButton"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/dontHaveAnAccountButton"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/login3"
+            android:onClick="loginClick"
+            tools:layout_editor_absoluteX="286dp"
+            tools:layout_editor_absoluteY="286dp" />
+
+        <Button
+            android:id="@+id/dontHaveAnAccountButton"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="53dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/scrollbarTrackVertical"
+            android:onClick="dontHaveAnAccountClick"
+            android:text="Don't have an account? Sign Up"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="360dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/emailId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            app:srcCompat="@drawable/profarminglogo" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_above="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
