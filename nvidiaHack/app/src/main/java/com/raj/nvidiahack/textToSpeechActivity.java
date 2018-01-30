@@ -24,9 +24,9 @@ public class textToSpeechActivity extends AppCompatActivity implements TextToSpe
 
         tts = new TextToSpeech(this, this);
 
-        btnSpeak = (Button) findViewById(R.id.btnSpeak);
+        btnSpeak = findViewById(R.id.btnSpeak);
 
-        txtText = (EditText) findViewById(R.id.txtText);
+        txtText = findViewById(R.id.txtText);
 
         // button on click event
         btnSpeak.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +74,6 @@ public class textToSpeechActivity extends AppCompatActivity implements TextToSpe
     private void speakOut() {
 
         String text = txtText.getText().toString();
-
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
