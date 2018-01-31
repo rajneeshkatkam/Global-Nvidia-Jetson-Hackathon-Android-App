@@ -3,26 +3,33 @@ package com.raj.nvidiahack;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Objects;
+import java.util.Set;
 
 public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     private static final String TAG = "afterLoginActivity";
@@ -38,7 +45,7 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     Boolean flag;
     String uid;
 
-    Info attendance;
+    //Info attendance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +93,6 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
                 promptSpeechInput();
             }
         });
-
 
 
 
@@ -146,8 +152,41 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
     public void fetchValuesFromDatabase(DataSnapshot dataSnapshot)
     {
-        /// Irrigation Values
-        attendance =dataSnapshot.child(uid).child("attendance").getValue(Info.class);
+        ArrayList<String> months=new ArrayList<>();
+        for(DataSnapshot snap:dataSnapshot.child(uid).child("attendance").child("2018").getChildren())
+        {
+            months.add(snap.getKey());
+        }
+        Log.i("months",months.toString());
+
+        ArrayList<String> days=new ArrayList<>();
+        for(int i=1;i<=months.size();i++) {
+            for (DataSnapshot snap : dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(i)).getChildren()) {
+                days.add(snap.getKey());
+            }
+        }
+        Log.i("monthsDays", days.toString());
+
+        Log.i("monthsDays", String.valueOf(days.size()));
+        int j=1;
+
+        for(int i=0;i<days.size();i++) {
+            if(Objects.equals(days.get(i), "lateCount"))
+            {
+                j++;
+            }
+            else
+            {
+                Log.i("monthsPerDayStatus",dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue().toString());
+            }
+
+        }
+
+
+
+
+
+
 
     }
 
