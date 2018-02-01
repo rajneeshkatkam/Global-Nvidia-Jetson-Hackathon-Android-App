@@ -8,9 +8,12 @@ import android.os.Build;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -169,6 +172,8 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
         Log.i("monthsDays", String.valueOf(days.size()));
         int j=1;
+        String s="";
+        ArrayList<String> attendanceStringArray=new ArrayList<>();
 
         for(int i=0;i<days.size();i++) {
             if(Objects.equals(days.get(i), "lateCount"))
@@ -177,10 +182,21 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
             }
             else
             {
-                Log.i("monthsPerDayStatus",dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue().toString());
+                if(Boolean.valueOf(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue())))
+                {
+                    Log.i( "  Date: "+String.valueOf(days.get(i))+"-"+String.valueOf(j)+"-"+"2018  "+" Late",String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("   ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue())));
+                    s=String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("   ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue()));
+                }
+                else
+                {
+                    Log.i( "  Date: "+String.valueOf(days.get(i))+"-"+String.valueOf(j)+"-"+"2018  "+" Late",String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("  ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue())));
+                    s=String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("  ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue()));
+                }
+                attendanceStringArray.add(s);
             }
 
         }
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,attendanceStringArray);
 
 
 
@@ -188,6 +204,11 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
 
 
+    }
+
+    void attendance(View v)
+    {
+        startActivity(new Intent(getApplicationContext(),attendanceActivity.class));
     }
 
 

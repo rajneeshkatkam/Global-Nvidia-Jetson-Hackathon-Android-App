@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="rajBlue">#3F51B5</color>
+    <color name="rajVoilet">#303F9F</color>
+    <color name="rajPink">#FF4081</color>
 
-    <color name="white">#ffffff</color>
+    <color name="colorPrimary">#318d35</color>
+    <color name="colorPrimaryDark">#458846</color>
+    <color name="colorAccent">#7cba47</color>
+    <color name="mycolor">#57ab42</color>
+    <color name="materialColor">#81d63c</color>
+    <color name="dark_green">#366f37</color>
+
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+
     <color name="bg_gradient_start">#31244e</color>
     <color name="bg_gradient_end">#6b394c</color>
 </resources>

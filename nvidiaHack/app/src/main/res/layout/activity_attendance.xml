@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.raj.nvidiahack.attendanceActivity">
+    tools:context="com.raj.nvidiahack.attendanceActivity"
+    android:background="@color/materialColor">
 
-</android.support.constraint.ConstraintLayout>
+    <!--<io.blackbox_vision.materialcalendarview.view.CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/box_shape_white"
+        android:layout_width="330dp"
+        android:layout_height="400dp"
+        app:calendarIsMultiSelectDayEnabled="false"
+        app:calendarIsOverflowDatesVisible="true"
+        app:calendarBackgroundColor="@color/colorPrimary"
+        app:calendarCurrentDayTextColor="@color/white"
+        app:calendarDayOfWeekTextColor="@android:color/white"
+        app:calendarDisabledDayBackgroundColor="@color/colorPrimary"
+        app:calendarDisabledDayTextColor="@android:color/darker_gray"
+        app:calendarSelectedDayBackgroundColor="@color/colorAccent"
+        app:calendarTitleBackgroundColor="@color/rajVoilet"
+        app:calendarWeekBackgroundColor="@color/colorPrimary"
+        app:calendarWeekendTextColor="@color/colorAccent"
+        app:calendarButtonBackgroundColor="@color/colorAccent"
+        app:calendarWeekendDays="saturday|sunday">
+    </io.blackbox_vision.materialcalendarview.view.CalendarView>
+-->
+
+
+    <ListView
+        android:foregroundGravity="center"
+        android:layout_width="330dp"
+        android:layout_height="570dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/box_shape_white"
+        android:id="@+id/listView"/>
+</RelativeLayout>

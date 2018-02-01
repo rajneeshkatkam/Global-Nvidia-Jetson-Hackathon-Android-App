@@ -15,6 +15,12 @@
         android:onClick="logout"
         android:text="Logout"/>
 
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:onClick="attendance"
+        android:text="Attendance"/>
+
 
     <TextView
         android:id="@+id/txtSpeechInput"
