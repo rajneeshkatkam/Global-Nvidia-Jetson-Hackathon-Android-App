@@ -1,8 +1,11 @@
 package com.raj.nvidiahack;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -44,6 +47,15 @@ public class attendanceActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
         uid = mAuth.getCurrentUser().getUid();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
+
+
 
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -110,8 +122,18 @@ public class attendanceActivity extends AppCompatActivity {
 
 
         }
+
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,attendanceStringArray);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent dialogueActivity=new Intent(getApplicationContext(), dialogueActivity.class);
+                dialogueActivity.putExtra("details",attendanceStringArray.get(i));
+                startActivity(dialogueActivity);
+            }
+        });
 
 
         //Log.i("  Date: " + String.valueOf(days.get(i)) + "-" + String.valueOf(j) + "-" + "2018  " + " Late", String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("   ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue())));

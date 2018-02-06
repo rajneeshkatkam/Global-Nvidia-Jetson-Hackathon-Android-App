@@ -7,19 +7,32 @@
     android:background="@color/bg_gradient_start"
     tools:context="com.raj.nvidiahack.mainActivityAfterSuccessfulLogin">
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:onClick="logout"
-        android:text="Logout"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="logout"
+
+        android:text="Logout"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="location"
+            android:text="location" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="attendance"
         android:text="Attendance"/>
+
+    </LinearLayout>
 
 
     <TextView

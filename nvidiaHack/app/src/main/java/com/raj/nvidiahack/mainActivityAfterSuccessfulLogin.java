@@ -263,6 +263,12 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         finish();
     }
 
+    public void location(View v)
+    {
+        startActivity(new Intent(getApplicationContext(),UserLocation.class));
+
+    }
+
 
 
 }
