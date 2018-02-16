@@ -13,16 +13,17 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:background="@color/colorPrimaryDark"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/login_page" />
+            app:srcCompat="@drawable/nvidialogo" />
 
         <EditText
             android:id="@+id/emailId"
@@ -31,7 +32,10 @@
             android:layout_above="@+id/password"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="34dp"
+            android:backgroundTint="@color/nvidiaColor"
+            android:textColor="@color/nvidiaColor"
             android:hint="Email ID"
+            android:textColorHint="@color/nvidiaColor"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -41,6 +45,9 @@
             android:layout_above="@+id/SignupButton"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="48dp"
+            android:textColorHint="@color/nvidiaColor"
+            android:backgroundTint="@color/nvidiaColor"
+            android:textColor="@color/nvidiaColor"
             android:hint="Password"
             android:inputType="textPassword" />
 
@@ -50,8 +57,10 @@
             android:layout_height="50dp"
             android:layout_above="@+id/dontHaveAnAccountButton"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/signup"
+            android:background="@drawable/box_shape_white"
             android:onClick="signupClick"
+            android:text="SIGNUP"
+            android:textSize="20dp"
             android:textSelectHandleLeft="@android:drawable/screen_background_light_transparent"
             tools:layout_editor_absoluteX="286dp"
             tools:layout_editor_absoluteY="286dp" />
@@ -79,15 +88,6 @@
             android:layout_above="@+id/password"
             android:layout_centerHorizontal="true"
             android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="350dp"
-            android:layout_height="130dp"
-            android:layout_above="@+id/emailId"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="60dp"
-            app:srcCompat="@drawable/profarminglogo" />
 
 
     </RelativeLayout>

@@ -18,11 +18,12 @@
 
         android:text="Logout"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="location"
-            android:text="location" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="location"
+        android:text="location"
+        />
 
 
 
@@ -30,7 +31,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="attendance"
-        android:text="Attendance"/>
+        android:text="Attendance" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="chatBot"
+            android:text="ChatBot"/>
 
     </LinearLayout>
 

@@ -6,8 +6,7 @@
         android:radius="20dp"
         />
 
-    <gradient
-        android:startColor="@color/nvidiaColor"
-        android:endColor="@color/black"
+    <solid
+        android:color="@color/colorPrimaryDark"
         />
 </shape>

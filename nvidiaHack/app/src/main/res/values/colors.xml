@@ -3,7 +3,8 @@
     <color name="rajBlue">#3F51B5</color>
     <color name="rajVoilet">#303F9F</color>
     <color name="rajPink">#FF4081</color>
-
+    <color name="nvidiaColor">#17fd04</color>
+    <color name="nvidialightColor">#46f937</color>
     <color name="colorPrimary">#318d35</color>
     <color name="colorPrimaryDark">#458846</color>
     <color name="colorAccent">#7cba47</color>

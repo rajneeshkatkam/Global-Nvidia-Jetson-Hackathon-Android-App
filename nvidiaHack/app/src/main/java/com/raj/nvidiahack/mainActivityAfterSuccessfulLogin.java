@@ -269,6 +269,11 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
     }
 
+    public void chatBot(View v)
+    {
+        startActivity(new Intent(getApplicationContext(),chatbotUIMain.class));
+    }
+
 
 
 }

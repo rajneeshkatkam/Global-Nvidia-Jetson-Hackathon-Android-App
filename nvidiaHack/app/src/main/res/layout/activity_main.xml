@@ -12,15 +12,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:background="@color/colorPrimaryDark"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/login_page" />
+            app:srcCompat="@drawable/nvidialogo" />
 
         <EditText
             android:id="@+id/emailId"
@@ -29,6 +30,9 @@
             android:layout_above="@+id/password"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="34dp"
+            android:backgroundTint="@color/nvidiaColor"
+            android:textColorHint="@color/nvidiaColor"
+            android:textColor="@color/nvidiaColor"
             android:hint="Email ID"
             android:inputType="textEmailAddress" />
 
@@ -38,6 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/LoginButton"
             android:layout_alignParentStart="true"
+            android:backgroundTint="@color/nvidiaColor"
+            android:textColorHint="@color/nvidiaColor"
+            android:textColor="@color/nvidiaColor"
             android:layout_marginBottom="48dp"
             android:hint="Password"
             android:inputType="textPassword" />
@@ -48,7 +55,9 @@
             android:layout_height="50dp"
             android:layout_above="@+id/dontHaveAnAccountButton"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/login3"
+            android:background="@drawable/box_shape_white"
+            android:text="LOGIN"
+            android:textSize="20dp"
             android:onClick="loginClick"
             tools:layout_editor_absoluteX="286dp"
             tools:layout_editor_absoluteY="286dp" />
@@ -67,15 +76,6 @@
             android:text="Don't have an account? Sign Up"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="360dp"
-            android:layout_height="130dp"
-            android:layout_above="@+id/emailId"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="60dp"
-            app:srcCompat="@drawable/profarminglogo" />
 
         <ProgressBar
             android:id="@+id/progressBar"

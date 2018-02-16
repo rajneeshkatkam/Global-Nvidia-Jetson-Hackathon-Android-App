@@ -32,7 +32,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    compile 'com.android.support:design:26.1.0'
 }
+
 
 
 

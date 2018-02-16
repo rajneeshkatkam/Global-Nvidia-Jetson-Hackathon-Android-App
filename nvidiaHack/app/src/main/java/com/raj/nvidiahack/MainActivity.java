@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("Register","Register button pressed");
         startActivity(new Intent(this,SignUpActivity.class));
-        finish();
     }
 
 

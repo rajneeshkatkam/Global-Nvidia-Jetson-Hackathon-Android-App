@@ -5,30 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.raj.nvidiahack.attendanceActivity"
-    android:background="@color/materialColor">
-
-    <!--<io.blackbox_vision.materialcalendarview.view.CalendarView
-        android:id="@+id/calendar_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/box_shape_white"
-        android:layout_width="330dp"
-        android:layout_height="400dp"
-        app:calendarIsMultiSelectDayEnabled="false"
-        app:calendarIsOverflowDatesVisible="true"
-        app:calendarBackgroundColor="@color/colorPrimary"
-        app:calendarCurrentDayTextColor="@color/white"
-        app:calendarDayOfWeekTextColor="@android:color/white"
-        app:calendarDisabledDayBackgroundColor="@color/colorPrimary"
-        app:calendarDisabledDayTextColor="@android:color/darker_gray"
-        app:calendarSelectedDayBackgroundColor="@color/colorAccent"
-        app:calendarTitleBackgroundColor="@color/rajVoilet"
-        app:calendarWeekBackgroundColor="@color/colorPrimary"
-        app:calendarWeekendTextColor="@color/colorAccent"
-        app:calendarButtonBackgroundColor="@color/colorAccent"
-        app:calendarWeekendDays="saturday|sunday">
-    </io.blackbox_vision.materialcalendarview.view.CalendarView>
--->
+    android:background="@color/black">
 
 
     <ListView
@@ -37,6 +14,6 @@
         android:layout_height="570dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="15dp"
-        android:background="@drawable/box_shape_white"
+        android:background="@drawable/nvidiablack"
         android:id="@+id/listView"/>
 </RelativeLayout>
