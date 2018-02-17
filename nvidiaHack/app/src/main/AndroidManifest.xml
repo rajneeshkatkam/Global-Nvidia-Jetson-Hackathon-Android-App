@@ -27,10 +27,6 @@
         <activity android:name=".mainActivityAfterSuccessfulLogin" />
         <activity android:name=".textToSpeechActivity" />
         <activity android:name=".attendanceActivity" />
-        <activity
-            android:name=".dialogueActivity"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
-        <activity android:name=".UserLocation" />
         <activity android:name=".chatbotUIMain"></activity>
     </application>
 

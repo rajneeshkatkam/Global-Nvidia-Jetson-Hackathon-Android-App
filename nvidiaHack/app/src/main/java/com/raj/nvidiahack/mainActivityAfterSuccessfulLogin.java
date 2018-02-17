@@ -59,8 +59,6 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         uid=mAuth.getCurrentUser().getUid();
         mDatabaseReference=FirebaseDatabase.getInstance().getReference();
 
-
-        txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
 
 
@@ -183,12 +181,6 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
     ///textToSpeechActivity Button onClick for Navigating to TTS activity
 
-    public void textToSpeechActivity(View v)
-    {
-        startActivity(new Intent(getApplicationContext(),textToSpeechActivity.class));
-        txtSpeechInput.setText(null);
-    }
-
     public void logout(View v)
     {
         startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -196,16 +188,30 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         finish();
     }
 
-    public void location(View v)
-    {
-        startActivity(new Intent(getApplicationContext(),UserLocation.class));
-
-    }
-
     public void chatBot(View v)
     {
         startActivity(new Intent(getApplicationContext(),chatbotUIMain.class));
     }
+
+    public void heatMap(View v)
+    {
+
+
+    }
+
+    public void amazonGo(View v)
+    {
+
+
+    }
+
+    public void switches(View v)
+    {
+
+
+
+    }
+
 
 
 }

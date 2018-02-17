@@ -7,54 +7,63 @@
     android:background="@color/bg_gradient_start"
     tools:context="com.raj.nvidiahack.mainActivityAfterSuccessfulLogin">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="fitXY"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="logout"
-
-        android:text="Logout"/>
-
-    <Button
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="location"
-        android:text="location"
-        />
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="attendance"
-        android:text="Attendance" />
-
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/txtSpeechInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:textColor="@color/white"
-        android:textSize="26dp"
-        android:textStyle="normal" />
+        android:layout_marginBottom="47dp"
+        android:columnCount="2"
+        android:rowCount="2">
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="heatMap"
+            android:text="Heat Map" />
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="attendance"
+            android:text="Attendance" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="amazonGo"
+            android:text="AMAZON GO" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="switches"
+            android:text="Switches" />
+
+
+    </GridLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <ImageButton
             android:id="@+id/btnSpeak"
@@ -74,11 +83,15 @@
             android:textSize="15dp"
             android:textStyle="normal" />
 
-        <Button
-            android:text="TTS Page -->"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="textToSpeechActivity"/>
     </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="logout"
+        android:text="Logout" />
 
 </RelativeLayout>

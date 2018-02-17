@@ -125,17 +125,6 @@ public class attendanceActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,attendanceStringArray);
         listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent dialogueActivity=new Intent(getApplicationContext(), dialogueActivity.class);
-                dialogueActivity.putExtra("details",attendanceStringArray.get(i));
-                startActivity(dialogueActivity);
-            }
-        });
-
-
         //Log.i("  Date: " + String.valueOf(days.get(i)) + "-" + String.valueOf(j) + "-" + "2018  " + " Late", String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("late").getValue()).concat("   ").concat(String.valueOf(dataSnapshot.child(uid).child("attendance").child("2018").child(String.valueOf(j)).child(String.valueOf(days.get(i))).child("Time").getValue())));
 
 
