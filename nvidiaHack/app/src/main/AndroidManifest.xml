@@ -25,9 +25,8 @@
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".mainActivityAfterSuccessfulLogin" />
-        <activity android:name=".textToSpeechActivity" />
         <activity android:name=".attendanceActivity" />
-        <activity android:name=".chatbotUIMain"></activity>
+        <activity android:name=".chatbotUIMain" />
     </application>
 
 </manifest>

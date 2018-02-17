@@ -1,8 +1,10 @@
 package com.raj.nvidiahack;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.speech.RecognizerIntent;
@@ -17,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +28,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import org.json.JSONObject;
 
@@ -42,8 +48,12 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
 
+
+    int gallery_Intent=1;
+    ProgressDialog progressDialog;
     DatabaseReference mDatabaseReference;
     FirebaseAuth mAuth;
+    StorageReference mStorage;
     SharedPreferences file;
     Boolean flag;
     String uid;
@@ -58,8 +68,11 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         uid=mAuth.getCurrentUser().getUid();
         mDatabaseReference=FirebaseDatabase.getInstance().getReference();
+        mStorage= FirebaseStorage.getInstance().getReference();
+        Log.i("Email",mAuth.getCurrentUser().getEmail());
 
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
+        progressDialog=new ProgressDialog(this);
 
 
 
@@ -201,9 +214,37 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
     public void amazonGo(View v)
     {
+        Intent intent=new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,gallery_Intent);
 
 
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        progressDialog.setMessage("Uploading..");
+        progressDialog.show();
+        if(requestCode==gallery_Intent && resultCode==RESULT_OK)
+        {
+            Uri uri=data.getData();
+            StorageReference filepath=mStorage.child(mAuth.getCurrentUser().getEmail()).child(uri.getLastPathSegment());
+            Log.i("Uri","Done");
+            filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(),"Upload Done",Toast.LENGTH_LONG).show();
+                }
+            });
+
+        }
+    }
+
+
+
 
     public void switches(View v)
     {
