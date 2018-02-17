@@ -27,6 +27,7 @@
         <activity android:name=".mainActivityAfterSuccessfulLogin" />
         <activity android:name=".attendanceActivity" />
         <activity android:name=".chatbotUIMain" />
+        <activity android:name=".HeatMap"></activity>
     </application>
 
 </manifest>

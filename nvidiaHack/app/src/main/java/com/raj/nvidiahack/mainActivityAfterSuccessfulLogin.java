@@ -208,7 +208,7 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
     public void heatMap(View v)
     {
-
+        startActivity(new Intent(getApplicationContext(),HeatMap.class));
 
     }
 
