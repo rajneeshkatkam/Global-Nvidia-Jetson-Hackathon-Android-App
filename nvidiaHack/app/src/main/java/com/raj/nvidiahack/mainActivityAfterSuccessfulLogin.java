@@ -217,26 +217,27 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         Intent intent=new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent,gallery_Intent);
-
-
     }
 
-
+    int objectScan=1;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         progressDialog.setMessage("Uploading..");
+        mDatabaseReference.child("objectScanCount").child("count").setValue(objectScan);
         progressDialog.show();
         if(requestCode==gallery_Intent && resultCode==RESULT_OK)
         {
             Uri uri=data.getData();
-            StorageReference filepath=mStorage.child(mAuth.getCurrentUser().getEmail()).child(uri.getLastPathSegment());
+            StorageReference filepath=mStorage.child(String.valueOf(objectScan));
             Log.i("Uri","Done");
             filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(),"Upload Done",Toast.LENGTH_LONG).show();
+                    mDatabaseReference.child("objectScanCount").child("email_id").setValue(mAuth.getCurrentUser().getEmail());
+                    objectScan++;
                 }
             });
 
@@ -245,11 +246,10 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
 
 
 
-
-    public void switches(View v)
+    public void webChat(View v)
     {
 
-
+        startActivity(new Intent(getApplicationContext(),WebChat.class));
 
     }
 
