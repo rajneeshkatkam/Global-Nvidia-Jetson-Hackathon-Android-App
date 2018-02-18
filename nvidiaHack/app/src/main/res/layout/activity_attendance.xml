@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.raj.nvidiahack.attendanceActivity"
-    android:background="@color/black">
+    android:background="@drawable/nvidia2">
 
 
     <ListView
@@ -14,6 +14,6 @@
         android:layout_height="570dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="15dp"
-        android:background="@drawable/nvidiablack"
+        android:background="@drawable/box_shape_green"
         android:id="@+id/listView"/>
 </RelativeLayout>

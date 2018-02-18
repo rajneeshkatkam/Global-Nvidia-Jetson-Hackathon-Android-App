@@ -48,7 +48,7 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
 
-
+    Intent browserIntent;
     int gallery_Intent=1;
     ProgressDialog progressDialog;
     DatabaseReference mDatabaseReference;
@@ -71,10 +71,9 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         mStorage= FirebaseStorage.getInstance().getReference();
         Log.i("Email",mAuth.getCurrentUser().getEmail());
 
-        btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
         progressDialog=new ProgressDialog(this);
 
-
+       browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://officechatbot123.localtunnel.me/"));
 
         ///Storage of flag value after the app is killed or shutdown
         file = getSharedPreferences("save", 0);
@@ -201,11 +200,6 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
         finish();
     }
 
-    public void chatBot(View v)
-    {
-        startActivity(new Intent(getApplicationContext(),chatbotUIMain.class));
-    }
-
     public void heatMap(View v)
     {
         startActivity(new Intent(getApplicationContext(),HeatMap.class));
@@ -218,13 +212,9 @@ public class mainActivityAfterSuccessfulLogin extends AppCompatActivity {
     }
 
 
-
-
     public void webChat(View v)
     {
-
-        startActivity(new Intent(getApplicationContext(),WebChat.class));
-
+        startActivity(browserIntent);
     }
 
 
